@@ -180,3 +180,9 @@ if [ -f "$HOME/.laptop.local" ]; then
   # shellcheck disable=SC1090
   . "$HOME/.laptop.local"
 fi
+
+
+fancy_echo "Installing dotfiles"
+gem install homesick
+homesick wedgex/dotfiles
+homesick link dotfiles
