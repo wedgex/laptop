@@ -119,6 +119,7 @@ brew "openssl"
 brew "the_silver_searcher"
 brew "tmux"
 brew "vim"
+brew "neovim"
 brew "watchman"
 brew "zsh"
 
@@ -178,7 +179,10 @@ if [ -f "$HOME/.laptop.local" ]; then
   . "$HOME/.laptop.local"
 fi
 
-fancy_echo "Installing dotfiles"
+fancy_echo "Installing dotfiles..."
 gem install homesick
 homesick wedgex/dotfiles
 homesick link dotfiles
+
+fancy_echo "Installing vim-plug for neovim..."
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
